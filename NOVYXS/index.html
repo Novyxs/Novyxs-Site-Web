@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/LogoBlanc.png" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Google -->
+  <title>NOVYXS — Chatbot IA premium pour entreprises</title>
+  <meta name="description" content="Novyxs aide les entreprises à capter plus de prospects avec un chatbot conversationnel moderne, rapide et professionnel. Disponible 24h/24, 7j/7." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://novyxs.com/" />
+
+  <!-- Open Graph — LinkedIn, Facebook, WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://novyxs.com" />
+  <meta property="og:title" content="NOVYXS — Chatbot IA premium pour entreprises" />
+  <meta property="og:description" content="Transformez chaque visite en opportunité. Un assistant conversationnel conçu pour qualifier vos prospects et booster votre conversion." />
+  <meta property="og:image" content="https://novyxs.com/LogoBlanc.png" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NOVYXS — Chatbot IA premium pour entreprises" />
+  <meta name="twitter:description" content="Transformez chaque visite en opportunité. Un assistant conversationnel conçu pour qualifier vos prospects." />
+  <meta name="twitter:image" content="https://novyxs.com/LogoBlanc.png" />
+
+  <!-- Google tag (Analytics) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X0BC70RTGC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-X0BC70RTGC');
+  </script>
+
+  <!-- Polices -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div id="root"></div>
+<script type="module" src="/src/main.jsx"></script>
+
+<!-- Chatbot widget -->
+<script>
+  window.CHATBOT_API_URL = "https://chatbot-production-3a9d.up.railway.app/chat";
+  window.CHATBOT_COMPANY_ID = "Novyxs";
+  window.CHATBOT_WELCOME_MESSAGE = "Salut 👋 Pose-moi une question.";
+</script>
+<script src="https://chatbot-production-3a9d.up.railway.app/chatbot.js"></script>
+<!-- /Chatbot widget -->
+</body>
+</html>
