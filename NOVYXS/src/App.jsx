@@ -196,20 +196,8 @@ function SplashScreen({ onComplete }) {
                     initial={{ opacity: 0, y: 14 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    style={{ width: "90px", height: "90px", objectFit: "contain" }}
+                    style={{ height: "150px", width: "auto", objectFit: "contain" }}
                 />
-                <motion.div
-                    initial={{ opacity: 0, y: 14 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-                    style={{
-                        fontSize: "44px", fontWeight: "700",
-                        letterSpacing: "0.18em", color: "#ffffff",
-                        fontFamily: "Inter, sans-serif",
-                    }}
-                >
-                    NOVYXS
-                </motion.div>
             </motion.div>
         </div>
     );
@@ -302,8 +290,7 @@ function LegalPage({ title, lastUpdate, sections, onBack, logoSrc }) {
             {/* Navbar simple */}
             <div style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, height: "68px", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(255,255,255,0.08)", background: "rgba(0,0,0,0.92)", backdropFilter: "blur(20px)" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", cursor: "pointer" }} onClick={onBack}>
-                    <img src={logoSrc} alt="Novyxs" style={{ width: "48px", height: "48px", objectFit: "contain" }} />
-                    <span style={{ fontSize: "18px", fontWeight: "700", letterSpacing: "0.14em", color: "#fff" }}>NOVYXS</span>
+                    <img src={logoSrc} alt="NOVYXS" style={{ height: "42px", width: "auto", objectFit: "contain" }} />
                 </div>
                 <button onClick={onBack} style={{ background: "transparent", border: "1px solid rgba(255,255,255,0.18)", color: "#fff", padding: "8px 20px", borderRadius: "999px", fontSize: "14px", cursor: "pointer", fontFamily: "Inter, sans-serif", transition: "all 0.2s" }}
                         onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; }}
@@ -508,8 +495,7 @@ function Navbar() {
                 }}
             >
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                    <img src={logoBlanc} alt="Novyxs" style={{ width: "48px", height: "48px", objectFit: "contain" }} />
-                    <span style={{ fontSize: "18px", fontWeight: "700", letterSpacing: "0.14em", color: "#ffffff" }}>NOVYXS</span>
+                    <img src={logoBlanc} alt="NOVYXS" style={{ height: "42px", width: "auto", objectFit: "contain" }} />
                 </div>
 
                 {!isMobile && (
@@ -801,8 +787,7 @@ function App() {
                 {/* ── FOOTER ── */}
                 <footer style={{ position: "relative", zIndex: 1, borderTop: "1px solid rgba(255,255,255,0.07)", padding: "28px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "16px", maxWidth: "1440px", margin: "0 auto", boxSizing: "border-box" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                        <img src={logoBlanc} alt="Novyxs" style={{ width: "28px", height: "28px", objectFit: "contain" }} />
-                        <span style={{ fontSize: "15px", fontWeight: "700", letterSpacing: "0.14em", color: "#ffffff" }}>NOVYXS</span>
+                        <img src={logoBlanc} alt="NOVYXS" style={{ height: "32px", width: "auto", objectFit: "contain" }} />
                     </div>
                     <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.38)", margin: 0 }}>© 2026 NOVYXS — Tous droits réservés</p>
                     <div style={{ display: "flex", gap: "24px" }}>
