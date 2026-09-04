@@ -1,9 +1,42 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedDivider from "../components/AnimatedDivider";
 import ProjectCard from "../components/ProjectCard";
 import useDocumentMeta from "../hooks/useDocumentMeta";
 import { projects } from "../data/projects";
 import { t, sectionAnimation, whiteBtn, darkBtn, hoverIn, hoverOut } from "../theme";
+
+function NumberedRow({ index, icon, title, desc, isLast }) {
+    const [hovered, setHovered] = useState(false);
+    return (
+        <div
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            style={{
+                display: "grid", gridTemplateColumns: "56px 1fr", gap: "20px", alignItems: "center",
+                padding: "24px 18px", margin: "0 -18px",
+                borderRadius: "20px",
+                borderTop: "1px solid rgba(255,255,255,0.08)",
+                borderBottom: isLast ? "1px solid rgba(255,255,255,0.08)" : "none",
+                background: hovered ? "rgba(255,255,255,0.035)" : "transparent",
+                transition: "background 0.25s ease",
+            }}
+        >
+            <span style={{ fontSize: "clamp(22px, 2.4vw, 30px)", fontWeight: "650", letterSpacing: "-0.02em", color: hovered ? "rgba(255,255,255,0.4)" : "rgba(255,255,255,0.16)", transition: "color 0.25s ease" }}>
+                {String(index).padStart(2, "0")}
+            </span>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "16px", alignItems: "center" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+                    <div style={{ width: "42px", height: "42px", borderRadius: "12px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "18px", flexShrink: 0 }}>
+                        {icon}
+                    </div>
+                    <h3 style={{ ...t.cardTitle, margin: 0 }}>{title}</h3>
+                </div>
+                <p style={{ ...t.body, margin: 0, fontSize: "15px", maxWidth: "480px" }}>{desc}</p>
+            </div>
+        </div>
+    );
+}
 
 export default function Home() {
     useDocumentMeta(
@@ -68,23 +101,7 @@ export default function Home() {
                 </h2>
                 <div>
                     {services.map(({ icon, title, desc }, i) => (
-                        <div key={title} style={{
-                            display: "grid", gridTemplateColumns: "80px 1fr", gap: "24px", alignItems: "start",
-                            padding: "32px 0",
-                            borderTop: "1px solid rgba(255,255,255,0.08)",
-                            borderBottom: i === services.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none",
-                        }}>
-                            <span style={{ fontSize: "clamp(28px, 3vw, 40px)", fontWeight: "650", letterSpacing: "-0.02em", color: "rgba(255,255,255,0.18)" }}>
-                                {String(i + 1).padStart(2, "0")}
-                            </span>
-                            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "16px", alignItems: "center" }}>
-                                <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-                                    <span style={{ fontSize: "22px" }}>{icon}</span>
-                                    <h3 style={{ ...t.cardTitle, margin: 0 }}>{title}</h3>
-                                </div>
-                                <p style={{ ...t.body, margin: 0, fontSize: "15px", maxWidth: "480px" }}>{desc}</p>
-                            </div>
-                        </div>
+                        <NumberedRow key={title} index={i + 1} icon={icon} title={title} desc={desc} isLast={i === services.length - 1} />
                     ))}
                 </div>
             </motion.section>

@@ -15,17 +15,15 @@ import NotFound from "./pages/NotFound";
 // Chargé en chunk séparé : three.js/r3f ne doit pas alourdir le bundle initial.
 const Background3D = lazy(() => import("./components/Background3D"));
 
-// Un objet 3D ambiant différent par page, en lien avec son contenu.
-function variantForPath(pathname) {
-    if (pathname === "/chatbot") return "bot";
-    if (pathname === "/secureport") return "lock";
-    return "orb";
+// L'orbe 3D n'est utilisé que sur l'accueil (et les pages légales) — Chatbot
+// et SecuReport restent sans 3D, avec juste un peu plus de couleur ambiante.
+function showsOrb(pathname) {
+    return pathname !== "/chatbot" && pathname !== "/secureport";
 }
 
 function AppShell() {
     const [splashDone, setSplashDone] = useState(false);
     const location = useLocation();
-    const variant = variantForPath(location.pathname);
 
     return (
         <>
@@ -41,9 +39,11 @@ function AppShell() {
                 transition={{ duration: 0.8 }}
                 style={{ backgroundColor: "#000000", color: "#ffffff", minHeight: "100vh", width: "100%", fontFamily: "Inter, sans-serif", position: "relative", overflow: "hidden" }}
             >
-                <Suspense fallback={null}>
-                    <Background3D variant={variant} />
-                </Suspense>
+                {showsOrb(location.pathname) && (
+                    <Suspense fallback={null}>
+                        <Background3D />
+                    </Suspense>
+                )}
 
                 {/* Glows — communs à toutes les pages */}
                 <div style={{ position: "absolute", top: "-180px", left: "50%", transform: "translateX(-50%)", width: "1100px", height: "1100px", background: "radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.025) 30%, rgba(0,0,0,0) 68%)", pointerEvents: "none" }} />

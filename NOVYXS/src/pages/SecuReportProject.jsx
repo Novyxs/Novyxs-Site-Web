@@ -62,7 +62,7 @@ export default function SecuReportProject() {
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: "40px", alignItems: "center" }}>
                     <div>
                         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "24px" }}>
-                            <div style={{ width: "34px", height: "34px", borderRadius: "10px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px" }}>
+                            <div style={{ width: "34px", height: "34px", borderRadius: "10px", background: "rgba(0,255,200,0.1)", border: "1px solid rgba(0,255,200,0.28)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px" }}>
                                 🛡️
                             </div>
                             <span style={{ fontSize: "16px", fontWeight: "700", letterSpacing: "0.08em", color: "#fff" }}>SecuReport</span>
@@ -87,23 +87,26 @@ export default function SecuReportProject() {
                         </div>
                     </div>
 
-                    {/* Console — mockup produit, superposé au cadenas 3D ambiant */}
-                    <div style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: "28px", padding: "24px", background: "linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))", boxShadow: "0 20px 60px rgba(0,0,0,0.45)" }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "18px" }}>
-                            <div style={{ width: "10px", height: "10px", borderRadius: "999px", background: "rgba(255,255,255,0.32)" }} />
-                            <div style={{ width: "10px", height: "10px", borderRadius: "999px", background: "rgba(255,255,255,0.2)" }} />
-                            <div style={{ width: "10px", height: "10px", borderRadius: "999px", background: "rgba(255,255,255,0.12)" }} />
-                            <span style={{ marginLeft: "10px", ...t.label }}>Activité récente</span>
-                        </div>
-                        <div style={{ display: "grid", gap: "10px" }}>
-                            {consoleRows.map(({ icon, label, status, tone }) => (
-                                <div key={label} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", padding: "12px 14px", borderRadius: "14px", background: "rgba(255,255,255,0.04)" }}>
-                                    <span style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "14px", color: "rgba(255,255,255,0.88)", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                                        <span style={{ flexShrink: 0 }}>{icon}</span><span style={{ overflow: "hidden", textOverflow: "ellipsis" }}>{label}</span>
-                                    </span>
-                                    <span style={{ flexShrink: 0 }}><StatusPill tone={tone}>{status}</StatusPill></span>
-                                </div>
-                            ))}
+                    {/* Console — mockup produit, avec un glow teal discret derrière */}
+                    <div style={{ position: "relative" }}>
+                        <div style={{ position: "absolute", top: "-60px", right: "-40px", width: "300px", height: "300px", borderRadius: "999px", background: "radial-gradient(circle, rgba(0,255,200,0.18) 0%, rgba(0,255,200,0.05) 45%, rgba(0,0,0,0) 72%)", filter: "blur(22px)", pointerEvents: "none" }} aria-hidden="true" />
+                        <div style={{ position: "relative", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "28px", padding: "24px", background: "linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))", boxShadow: "0 20px 60px rgba(0,0,0,0.45)" }}>
+                            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "18px" }}>
+                                <div style={{ width: "10px", height: "10px", borderRadius: "999px", background: "#00ffc8" }} />
+                                <div style={{ width: "10px", height: "10px", borderRadius: "999px", background: "rgba(255,255,255,0.2)" }} />
+                                <div style={{ width: "10px", height: "10px", borderRadius: "999px", background: "rgba(255,255,255,0.12)" }} />
+                                <span style={{ marginLeft: "10px", ...t.label }}>Activité récente</span>
+                            </div>
+                            <div style={{ display: "grid", gap: "10px" }}>
+                                {consoleRows.map(({ icon, label, status, tone }) => (
+                                    <div key={label} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", padding: "12px 14px", borderRadius: "14px", background: "rgba(255,255,255,0.04)" }}>
+                                        <span style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "14px", color: "rgba(255,255,255,0.88)", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                            <span style={{ flexShrink: 0 }}>{icon}</span><span style={{ overflow: "hidden", textOverflow: "ellipsis" }}>{label}</span>
+                                        </span>
+                                        <span style={{ flexShrink: 0 }}><StatusPill tone={tone}>{status}</StatusPill></span>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -166,7 +169,7 @@ export default function SecuReportProject() {
                                 borderBottom: i === features.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none",
                             }}>
                                 <div style={{ order: reversed ? 2 : 1, display: "flex", alignItems: "center", gap: "16px" }}>
-                                    <div style={{ width: "44px", height: "44px", borderRadius: "12px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "20px", flexShrink: 0 }}>
+                                    <div style={{ width: "44px", height: "44px", borderRadius: "12px", background: "rgba(0,255,200,0.1)", border: "1px solid rgba(0,255,200,0.28)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "20px", flexShrink: 0 }}>
                                         {icon}
                                     </div>
                                     <h3 style={{ ...t.cardTitle, margin: 0 }}>{title}</h3>

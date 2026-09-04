@@ -61,8 +61,11 @@ export default function ChatbotProject() {
                         </div>
                     </div>
 
-                    {/* Colonne vide — le robot 3D ambiant occupe cet espace */}
-                    <div style={{ minHeight: "1px" }} aria-hidden="true" />
+                    {/* Glow bleu discret — apporte un peu de couleur à droite du hero */}
+                    <div style={{ position: "relative", minHeight: "1px" }} aria-hidden="true">
+                        <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "460px", height: "460px", maxWidth: "90%", borderRadius: "999px", background: "radial-gradient(circle, rgba(100,120,255,0.22) 0%, rgba(100,120,255,0.08) 45%, rgba(0,0,0,0) 72%)", filter: "blur(20px)" }} />
+                        <div style={{ position: "absolute", top: "58%", left: "62%", width: "220px", height: "220px", borderRadius: "999px", background: "radial-gradient(circle, rgba(0,255,200,0.16) 0%, rgba(0,255,200,0.04) 50%, rgba(0,0,0,0) 72%)", filter: "blur(18px)" }} />
+                    </div>
                 </div>
             </motion.section>
 
@@ -75,9 +78,9 @@ export default function ChatbotProject() {
                     Les entreprises perdent des clients quand elles répondent trop tard.
                 </h2>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "20px" }}>
-                    <HoverCard icon="⏱" title="Réponses trop lentes"       desc="Quand un visiteur pose une question et n'obtient pas une réponse immédiate, il quitte souvent le site." />
-                    <HoverCard icon="💸" title="Prospects perdus"           desc="Chaque question ignorée peut représenter une vente ou un rendez-vous manqué." />
-                    <HoverCard icon="🌑" title="Pas de présence continue"   desc="Une équipe humaine ne peut pas répondre 24/7 avec la même vitesse et la même constance." />
+                    <HoverCard accent="#6478ff" icon="⏱" title="Réponses trop lentes"       desc="Quand un visiteur pose une question et n'obtient pas une réponse immédiate, il quitte souvent le site." />
+                    <HoverCard accent="#6478ff" icon="💸" title="Prospects perdus"           desc="Chaque question ignorée peut représenter une vente ou un rendez-vous manqué." />
+                    <HoverCard accent="#6478ff" icon="🌑" title="Pas de présence continue"   desc="Une équipe humaine ne peut pas répondre 24/7 avec la même vitesse et la même constance." />
                 </div>
             </motion.section>
 
@@ -98,7 +101,7 @@ export default function ChatbotProject() {
                     <div style={{ display: "grid", gap: "12px" }}>
                         <p style={{ ...t.label, marginBottom: "4px" }}>Ce que le chatbot apporte</p>
                         {solutionItems.map(({ icon, label }) => (
-                            <HoverCard key={label} icon={icon} title={label} compact />
+                            <HoverCard key={label} accent="#6478ff" icon={icon} title={label} compact />
                         ))}
                     </div>
                 </div>
@@ -136,7 +139,7 @@ export default function ChatbotProject() {
 
                     <div style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: "28px", padding: "24px", background: "linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))", boxShadow: "0 20px 60px rgba(0,0,0,0.45)" }}>
                         <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "18px" }}>
-                            <div style={{ width: "10px", height: "10px", borderRadius: "999px", background: "rgba(255,255,255,0.32)" }} />
+                            <div style={{ width: "10px", height: "10px", borderRadius: "999px", background: "#6478ff" }} />
                             <div style={{ width: "10px", height: "10px", borderRadius: "999px", background: "rgba(255,255,255,0.2)" }} />
                             <div style={{ width: "10px", height: "10px", borderRadius: "999px", background: "rgba(255,255,255,0.12)" }} />
                             <span style={{ marginLeft: "10px", ...t.label }}>Assistant Novyxs</span>
