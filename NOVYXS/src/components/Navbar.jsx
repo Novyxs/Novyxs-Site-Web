@@ -48,7 +48,7 @@ export default function Navbar() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 style={{
-                    position: "fixed", top: isMobile ? "12px" : "18px", left: "50%", transform: "translateX(-50%)", zIndex: 1000,
+                    position: "fixed", top: isMobile ? "12px" : "18px", left: 0, right: 0, margin: "0 auto", zIndex: 1000,
                     width: isMobile ? "calc(100% - 24px)" : "min(1180px, calc(100% - 40px))",
                     height: isMobile ? "60px" : "66px", padding: isMobile ? "0 14px" : "0 12px 0 22px",
                     display: "flex", alignItems: "center", justifyContent: "space-between",

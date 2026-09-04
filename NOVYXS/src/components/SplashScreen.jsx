@@ -160,11 +160,8 @@ export default function SplashScreen({ onComplete }) {
             <canvas ref={canvasRef} style={{ position: "fixed", inset: 0, width: "100%", height: "100%" }} />
 
             {/* Logo */}
-            <motion.div
+            <div
                 ref={logoRef}
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
                 style={{
                     position: "fixed", inset: 0,
                     display: "flex", flexDirection: "column",
@@ -184,7 +181,7 @@ export default function SplashScreen({ onComplete }) {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     style={{ height: "150px", width: "auto", objectFit: "contain" }}
                 />
-            </motion.div>
+            </div>
         </div>
     );
 }
