@@ -114,7 +114,7 @@ export default function Home() {
                 <h2 style={{ ...t.h2, maxWidth: "700px", margin: "0 0 48px 0" }}>
                     Ce qu'on a construit récemment.
                 </h2>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "24px" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))", gap: "28px" }}>
                     {projects.map((project) => (
                         <ProjectCard key={project.id} {...project} />
                     ))}

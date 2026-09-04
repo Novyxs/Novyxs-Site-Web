@@ -8,6 +8,7 @@ export const projects = [
         icon: "💬",
         href: "/chatbot",
         status: "live", // badge : "En ligne"
+        accent: "#6478ff",
     },
     {
         id: "secureport",
@@ -16,6 +17,7 @@ export const projects = [
         icon: "🛡️",
         href: "/secureport",
         status: "soon", // badge : "Bientôt disponible"
+        accent: "#00ffc8",
     },
 ];
 
